@@ -54,50 +54,52 @@
       word-wrap: break-word; /* 防止长行代码溢出 */
       margin: 10px 0 0 0;
       font-size: 14px;
-    }
-    #code-block {
-        margin-left: 15px;
+      margin-left: 15px;
     }
   </style>
 </head>
 <body>
-<div class="code-container">
-        <div class="code-header">
-          <span>“深度搜索”</span>
-          <button class="copy-btn" onclick="copyCode()">复制</button>
-        </div>
-        <pre id="code-block">
-http://searchgf7gdtauh7bhnbyed4ivxqmuoat3nm6zfrg3ymkq6mtnpye3ad.onion
-        </pre>
-</div>
-<div class="code-container">
-  <div class="code-header">
-    <span>“暗网链接目录”</span>
-    <button class="copy-btn" onclick="copyCode()">复制</button>
-  </div>
-  <pre id="code-block">
-http://sz5h6tiqkdkfl55qa3kcxgzck3xeffo6cso7sjpc7hc7sr3vghdyicqd.onion
-  </pre>
-</div>
+
 <div class="code-container">
     <div class="code-header">
-      <span>“隐藏链接目录”</span>
-      <button class="copy-btn" onclick="copyCode()">复制</button>
+        <span>“深度搜索”</span>
+        <button class="copy-btn" onclick="copyCode('code-block-1')">复制</button>
     </div>
-    <pre id="code-block">
+    <pre id="code-block-1">
+http://searchgf7gdtauh7bhnbyed4ivxqmuoat3nm6zfrg3ymkq6mtnpye3ad.onion
+    </pre>
+</div>
+
+<div class="code-container">
+    <div class="code-header">
+        <span>“暗网链接目录”</span>
+        <button class="copy-btn" onclick="copyCode('code-block-2')">复制</button>
+    </div>
+    <pre id="code-block-2">
+http://sz5h6tiqkdkfl55qa3kcxgzck3xeffo6cso7sjpc7hc7sr3vghdyicqd.onion
+    </pre>
+</div>
+
+<div class="code-container">
+    <div class="code-header">
+        <span>“隐藏链接目录”</span>
+        <button class="copy-btn" onclick="copyCode('code-block-3')">复制</button>
+    </div>
+    <pre id="code-block-3">
 http://toponiibv4eo4pctlszgavni5ajzg7uvkd7e2xslkjmtcfqesjlsqpid.onion
     </pre>
-  </div>
+</div>
+
 <script>
-  function copyCode() {
-    const codeBlock = document.getElementById('code-block');
+  function copyCode(blockId) {
+    const codeBlock = document.getElementById(blockId);
     const range = document.createRange();
     range.selectNode(codeBlock);
-    window.getSelection().removeAllRanges(); 
-    window.getSelection().addRange(range); 
-    document.execCommand('copy'); 
-
-    window.getSelection().removeAllRanges(); 
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    alert('暗网链接：' + codeBlock.innerText.trim() + ' 已复制到粘贴板，请打开 Tor Browser 软件客户端访问该链接。');
   }
 </script>
 
