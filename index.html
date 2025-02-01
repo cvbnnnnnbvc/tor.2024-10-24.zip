@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tor网址簿</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #292929;
+    }
+
+    .code-container {
+      background-color: #1e1e1e; /* 黑色背景 */
+      color: white; /* 白色字体 */
+      border-radius: 8px;
+      margin: 20px;
+      position: relative;
+      padding: 10px;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .code-header {
+      background-color: rgb(101, 86, 166); /* 紫色上沿 */
+      color: white;
+      padding: 5px 10px;
+      font-size: 16px;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .code-header .copy-btn {
+      background-color: rgb(101, 86, 166); /* 紫色按钮 */
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .code-header .copy-btn:hover {
+      background-color: #551ba6; /* 鼠标悬停时按钮变色 */
+    }
+
+    pre {
+      white-space: pre-wrap; /* 使代码换行 */
+      word-wrap: break-word; /* 防止长行代码溢出 */
+      margin: 10px 0 0 0;
+      font-size: 14px;
+    }
+    #code-block {
+        margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="code-container">
+        <div class="code-header">
+          <span>“深度搜索”</span>
+          <button class="copy-btn" onclick="copyCode()">复制</button>
+        </div>
+        <pre id="code-block">
+http://searchgf7gdtauh7bhnbyed4ivxqmuoat3nm6zfrg3ymkq6mtnpye3ad.onion
+        </pre>
+</div>
+<div class="code-container">
+  <div class="code-header">
+    <span>“暗网链接目录”</span>
+    <button class="copy-btn" onclick="copyCode()">复制</button>
+  </div>
+  <pre id="code-block">
+http://sz5h6tiqkdkfl55qa3kcxgzck3xeffo6cso7sjpc7hc7sr3vghdyicqd.onion
+  </pre>
+</div>
+<div class="code-container">
+    <div class="code-header">
+      <span>“隐藏链接目录”</span>
+      <button class="copy-btn" onclick="copyCode()">复制</button>
+    </div>
+    <pre id="code-block">
+http://toponiibv4eo4pctlszgavni5ajzg7uvkd7e2xslkjmtcfqesjlsqpid.onion
+    </pre>
+  </div>
+<script>
+  function copyCode() {
+    const codeBlock = document.getElementById('code-block');
+    const range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges(); 
+    window.getSelection().addRange(range); 
+    document.execCommand('copy'); 
+
+    window.getSelection().removeAllRanges(); 
+  }
+</script>
+
+</body>
+</html>
